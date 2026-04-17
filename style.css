@@ -1,0 +1,236 @@
+
+        /* --- RESET & BASIC STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- PROFILE SELECTION SCREEN --- */
+        #profile-screen {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #141414;
+            z-index: 100;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .profiles-container {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .profile-card {
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-align: center;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.1);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 5px;
+            border: 3px solid transparent;
+            margin-bottom: 10px;
+            background-size: cover;
+            background-position: center;
+            background-color: #333;
+        }
+
+        .avatar:hover {
+            border-color: white;
+        }
+
+        .profile-name {
+            font-size: 1.2rem;
+            color: #b3b3b3;
+        }
+
+        /* --- MAIN DASHBOARD (Hidden initially) --- */
+        #main-dashboard {
+            display: none; /* Hidden until profile is picked */
+            min-height: 100vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(20,20,20,1) 100%), url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e2-40af-b45f-3b4b271c9b1a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 4%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0));
+            transition: background 0.3s;
+        }
+
+        .navbar.scrolled {
+            background-color: #141414;
+        }
+
+        .logo {
+            color: #E50914;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #b3b3b3;
+        }
+
+        .back-btn {
+            background-color: #E50914;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .back-btn:hover {
+            background-color: #f40612;
+        }
+
+        /* --- CONTENT ROWS --- */
+        .category-row {
+            margin: 20px 0 40px 4%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #e5e5e5;
+        }
+
+        .movie-scroller {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding-bottom: 20px;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .movie-scroller::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .movie-card {
+            min-width: 200px;
+            height: 300px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background-color: #333;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            z-index: 20;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .movie-card:hover .movie-info {
+            opacity: 1;
+        }
+
+        .movie-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #fffefe;
+        }
+
+    #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 99999; /* VERY IMPORTANT */
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #333;
+    border-top: 6px solid red;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

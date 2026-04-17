@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STREAMFLIX - Movies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<!-- LOADING SCREEN -->
+
+<body>
+
+<div id="loading-screen">
+    <div class="loader"></div>
+</div>
+
+<!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+
+        <div style="display:flex;align-items:center;">
+            <a href="#" class="logo">STREAMFLIX</a>
+            <div class="nav-links">
+                    <a href="main.html">Home</a>
+                    <a href="movies.html">Movies</a>
+                    <a href="anime.html">Anime</a>
+                    <a href="drama.html">Drama</a>
+                    
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <span id="current-user">User</span>
+             <a href="Index.html">
+                <div class="avatar" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'); width: 35px; height: 35px; border-radius: 4px;"></div>
+            </a>
+        </div>
+    </nav>
+<!-- NAVBAR -->
+
+<div style="padding:60px;">
+
+   <!-- MOVIES Category -->
+        <div class="category-row"> 
+            <h2 class="category-title" id="movies">Movies</h2>
+            <div class="movie-scroller">
+                <!-- One Piece Live Action -->
+                <a href="https://sflix.ps/tv/free-one-piece-hd-99826" target="_blank" class="movie-card">
+                    <img src="Image/onepiecelive.jfif" style="width:100%; height:100%;">
+                    <div class="movie-info">
+                        <div class="movie-title">One Piece (Live Action)</div>
+                    </div>
+                </a>
+                <!-- Princess Kaguya -->
+                <a href="https://9animetv.to/watch/cosmic-princess-kaguya-20173?ep=164369" target="_blank" class="movie-card">
+                     <img src="Image/princesskaguya.jfif" style="width:100%; height:100%;">
+                    <div class="movie-info">
+                        <div class="movie-title">The Tale of the Princess Kaguya</div>
+                    </div>
+                </a>
+                <!-- Mamma Mia -->
+                <a href="https://sflix.ps/watch-movie/free-mamma-mia-hd-19421.5297896" target="_blank" class="movie-card">
+                     <img src="Image/mamamia.jfif" style="width:100%; height:100%;">
+                    <div class="movie-info">
+                        <div class="movie-title">Mamma Mia!</div>
+                    </div>
+                </a>
+                <!-- Mamma Mia -->
+                <a href="https://sflix.ps/watch-movie/free-enola-holmes-hd-63478.5477455" target="_blank" class="movie-card">
+                    <img src="Image/enolaholmes.jfif" style="width:100%; height:100%;">
+                    <div class="movie-info">
+                        <div class="movie-title">Enola holmes</div>
+                    </div>
+                </a>
+              </div>
+        </div>
+    <!-- MOVIES Category -->
+</div>
+<!-- NAVBAR SCROLL EFFECT -->
+<script>
+function enterSite(user) {
+    document.getElementById("profile-screen").style.display = "none";
+    document.getElementById("main-dashboard").style.display = "block";
+
+    // 🔥 CHANGE USER TEXT BASED ON CLICK
+    document.getElementById("current-user").innerText = user;
+}
+
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+
+// 🔥 FIXED 5 SECOND LOADING
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+    }, 500);
+};
+
+</script>
+
+</body>
+</html>

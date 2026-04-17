@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STREAMFLIX - Movies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+<!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+
+        <div style="display:flex;align-items:center;">
+            <a href="#" class="logo">STREAMFLIX</a>
+            <div class="nav-links">
+                    <a href="main.html">Home</a>
+                    <a href="movies.html">Movies</a>
+                    <a href="anime.html">Anime</a>
+                    <a href="drama.html">Drama</a>
+                    
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <span id="current-user">User</span>
+            <a href="Index.html">
+                <div class="avatar" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'); width: 35px; height: 35px; border-radius: 4px;"></div>
+            </a>
+        </div>
+    </nav>
+<!-- NAVBAR -->
+
+<div style="padding:60px;">
+    <!-- Drama Category -->
+     <div class="category-row"> 
+           <h2 class="category-title" id="drama">Drama</h2>
+            <div class="movie-scroller">
+                <!-- One Piece Live Action -->
+
+                <a href="https://sflix.ps/watch-movie/free-five-feet-apart-hd-41046.5369422" target="_blank" class="movie-card">
+                     <img src="c:\Users\lenovo\Documents\STREAMFLIX\Image\five Feet Apart.jfif" style="width:100%; height:100%;">
+                    <div class="movie-info">
+                        <div class="movie-title">Five Feet Apart</div>
+                    </div>
+                </a>
+                <!-- Princess Kaguya -->
+                <a href="https://www.bilibili.tv/en/video/2042262833?bstar_from=bstar-web.ugc-video-detail.related-recommend.all" target="_blank" class="movie-card">
+                    <img src="Image\youreyestell.jfif" style="width:100%; height:100%;">
+                    <div class="movie-info">
+                        <div class="movie-title"> Your Eyes Tell</div>
+                    </div>
+                </a>
+                <!-- Mamma Mia -->
+                <a href="https://sflix.ps/watch-tv/free-the-summer-i-turned-pretty-hd-82873.8555596" target="_blank" class="movie-card">
+                    <img src="Image\The Summer I Turned Pretty.jfif" style="width:100%; height:100%;">
+                    <div class="movie-info">
+                        <div class="movie-title">The summer i turned pretty</div>
+                    </div>
+                </a>
+        </div>
+ <!-- Drama Category -->
+</div>
+
+
+<!-- NAVBAR SCROLL EFFECT -->
+<script>
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// 🔥 FIXED 5 SECOND LOADING
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+    }, 500);
+};
+</script>
+
+</body>
+</html>
